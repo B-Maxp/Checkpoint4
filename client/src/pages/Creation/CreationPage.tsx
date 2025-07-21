@@ -2,6 +2,8 @@ import { toast } from "react-toastify";
 import "./CreationPage.css";
 
 function CreationPage() {
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const success = () =>
     toast.success("Bravo, vous avez réussi à créer une nouvelle arme 🎉");
   const error = () => toast.error("Râté 😩");
@@ -9,7 +11,7 @@ function CreationPage() {
   const handleSubmit = (data: FormData) => {
     const formData = JSON.stringify(Object.fromEntries(data));
 
-    fetch("http://localhost:3310/api/weapon", {
+    fetch(`${apiUrl}/api/weapon`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

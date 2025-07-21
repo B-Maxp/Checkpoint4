@@ -9,7 +9,7 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App";
 import HomePage from "./pages/Home/HomePage";
 import CreationPage from "./pages/Creation/CreationPage";
-
+import DetailsPage from "./pages/Details/DetailsPage";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />,
+      },
+      {
+        path: "/detail/:id",
+        element: <DetailsPage />,
       },
       {
         path: "/create",

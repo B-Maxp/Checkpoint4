@@ -7,10 +7,33 @@ const browse: RequestHandler = async (req, res) => {
   res.json(result);
 };
 
+const read: RequestHandler = async (req, res) => {
+  const result = await weaponRepository.readById(req.params.id);
+
+  if (result) {
+    res.json(result);
+  } else {
+    res.status(404).json("This weapon doesn't exist");
+  }
+};
+
+const edit: RequestHandler = async (req, res) => {
+  try {
+    const result = await weaponRepository.update(req.body, req.params.id);
+
+    if (result) {
+      res.status(201).json(`${req.body.name} has been updated successfully`);
+    } else {
+      res.status(404).json("This weapon doesn't exist");
+    }
+  } catch (err) {
+    res.status(500).json("Internal server error");
+  }
+};
+
 const add: RequestHandler = async (req, res) => {
   try {
     const result = await weaponRepository.create(req.body);
-    console.warn("JE SUIS DANS ACTION")
 
     if (result) {
       res.status(201).json("A new weapon has been created successfully");
@@ -37,4 +60,4 @@ const destroy: RequestHandler = async (req, res) => {
   }
 };
 
-export default { browse, add, destroy };
+export default { browse, read, edit, add, destroy };
