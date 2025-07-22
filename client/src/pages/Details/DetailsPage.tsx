@@ -99,7 +99,7 @@ function DetailsPage() {
   if (!weapon) {
     return (
       <main className="app">
-        <p>Chargement...</p>
+        <p>Loading...</p>
       </main>
     );
   }
@@ -111,9 +111,9 @@ function DetailsPage() {
 
         {isEditing ? (
           <div className="edit-form">
-            <h3>Modifier l'arme</h3>
+            <h3>Edit weapon</h3>
             <div className="input-group">
-              <label htmlFor="name">Nom :</label>
+              <label htmlFor="name">Name :</label>
               <input
                 type="text"
                 id="name"
@@ -140,14 +140,14 @@ function DetailsPage() {
                 onClick={handleUpdateWeapon}
                 className="confirm-button"
               >
-                Confirmer
+                Confirm
               </button>
               <button
                 type="button"
                 onClick={handleCancel}
                 className="cancel-button"
               >
-                Annuler
+                Cancel
               </button>
             </div>
           </div>
@@ -158,10 +158,10 @@ function DetailsPage() {
               onClick={handleDeleteWeapon}
               className="delete-button"
             >
-              Supprimer
+              Delete
             </button>
             <button type="button" onClick={handleEdit} className="edit-button">
-              Modifier
+              Edit
             </button>
           </div>
         )}
