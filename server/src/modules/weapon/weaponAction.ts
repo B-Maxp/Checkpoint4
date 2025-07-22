@@ -22,7 +22,7 @@ const edit: RequestHandler = async (req, res) => {
     const result = await weaponRepository.update(req.body, req.params.id);
 
     if (result) {
-      res.status(201).json(`${req.body.name} has been updated successfully`);
+      res.status(201).json({ name: req.body.name, image: req.body.image });
     } else {
       res.status(404).json("This weapon doesn't exist");
     }

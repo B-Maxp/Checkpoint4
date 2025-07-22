@@ -1,16 +1,74 @@
-.action-buttons {
-  button {
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 1rem 1rem 0 0;
-  }
+p {
+  color: white;
+}
+button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 1rem 1rem 0 0;
+  transition: background-color 0.2s;
+}
+.button-group {
   .delete-button {
     background-color: #dc2626;
   }
 
+  .delete-button:hover {
+    background-color: #b91c1c;
+  }
+
   .edit-button {
     background-color: #2563eb;
+  }
+
+  .edit-button:hover {
+    background-color: #1d4ed8;
+  }
+}
+
+.edit-form {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  .input-group label {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .confirm-button {
+    background-color: #16a34a;
+  }
+
+  .confirm-button:hover {
+    background-color: #15803d;
+  }
+
+  .cancel-button {
+    background-color: #6b7280;
+  }
+
+  .cancel-button:hover {
+    background-color: #4b5563;
   }
 }
