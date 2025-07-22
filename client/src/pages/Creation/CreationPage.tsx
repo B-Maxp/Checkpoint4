@@ -26,7 +26,7 @@ function CreationPage() {
         <label htmlFor="name">Name of the weapon</label>
         <input id="name" name="name" placeholder="Exemple: Knife" />
 
-        <label htmlFor="image">Image of video weapon</label>
+        <label htmlFor="image">Image of the weapon</label>
         <input id="image" name="image" placeholder="Exemple: Knife_image.png" />
 
         <button type="submit">Valider</button>
